@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comparador de Medicamentos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    input, button {
+      font-size: 18px;
+      padding: 10px;
+      margin: 10px;
+    }
+    button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+    .resultado {
+      font-size: 20px;
+      margin-top: 20px;
+    }
+    .farmacias {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+    .footer {
+      margin-top: 50px;
+      font-size: 16px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <h1>Comparador de Medicamentos</h1>
+  <p>Buscamos en las siguientes farmacias:</p>
+  <div class="farmacias">
+    <p>Droguerías Cafam, Cruz Verde, Droguerías Colsubsidio, Farmatodo, La Rebaja, Farmalisto, Locatel, Droguería La Economía</p>
+  </div>
+  <form method="POST">
+    <input type="text" name="medicamento" placeholder="Ingrese el medicamento" required>
+    <button type="submit">Buscar</button>
+  </form>
+  {% if resultado %}
+    <div class="resultado">
+      <p>Farmacia más económica: <strong>{{ resultado.farmacia }}</strong></p>
+      <p>Precio: <strong>{{ resultado.precio }}</strong></p>
+      <p><a href="{{ resultado.link }}" target="_blank">Ir a la página</a></p>
+    </div>
+  {% endif %}
+  <div class="footer">
+    <p>&copy; Todos los derechos reservados. CDGordillos</p>
+    <p>Contáctanos: cdgordillos@gmail.com</p>
+  </div>
+</body>
+</html>
+
