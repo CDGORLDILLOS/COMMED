@@ -1,0 +1,6 @@
+comparador_medicamentos/
+├── app.py                  # App Flask principal
+├── scraper.py             # Lógica simulada de búsqueda
+├── requirements.txt       # Dependencias para instalar en Railway
+└── templates/
+    └── index.html         # Interfaz HTML del comparador
